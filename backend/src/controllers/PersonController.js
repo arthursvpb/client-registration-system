@@ -15,7 +15,14 @@ const PersonController = {
 
     try {
       await database
-        .insert({ cpf, name, email, birthday, nationality })
+        .insert({
+          cpf,
+          name,
+          email,
+          birthday,
+          nationality,
+          createdAt: new Date().toISOString().slice(0, 19).replace("T", " "),
+        })
         .table("Person");
       return res.json({ message: "Successfully created person." });
     } catch (err) {
@@ -38,13 +45,15 @@ const PersonController = {
       await database
         .where({ id: id })
         .update({
-          cpf,
-          name,
-          email,
-          birthday,
-          nationality,
+          cpf: cpf,
+          name: name,
+          email: email,
+          birthday: birthday,
+          nationality: nationality,
+          updatedAt: new Date().toISOString().slice(0, 19).replace("T", " "),
         })
         .table("Person");
+
       res.json({ message: "Successfully updated person" });
     } catch (err) {
       res.json(err);
