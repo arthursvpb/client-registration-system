@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 
 import api from "../services/api";
 
+import '../styles/pages/createPerson.css'
+
 function CreatePerson() {
   const history = useHistory();
 

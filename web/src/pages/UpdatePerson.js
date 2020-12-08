@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 
 import api from "../services/api";
 
+import "../styles/pages/updatePerson.css";
+
 function UpdatePerson() {
   const history = useHistory();
 
@@ -14,15 +16,15 @@ function UpdatePerson() {
     });
   }, []);
 
-  let cpf = person.cpf;
-  let name = person.name;
-  let email = person.email;
-  let birthday = person.birthday;
-  let nationality = person.nationality;
+  const [cpf, setCpf] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [birthday, setBirthday] = useState("");
+  const [nationality, setNationality] = useState("");
 
-  console.log(person);
+  console.log(cpf, name, email, birthday, nationality);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     const data = {
@@ -32,50 +34,62 @@ function UpdatePerson() {
       birthday,
       nationality,
     };
-
-    console.log(data);
-
-    api
-      .put("/person/16", data)
-      .then((res) => {
-        console.log(res.statusText);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      await api.put("/person/16", data);
+      alert("Success");
+    } catch (err) {
+      alert("Error");
+    }
 
     history.push("/person");
   }
 
   return (
-    <div id="page-create-person">
-      <h1>Create Person</h1>
+    <div id="page-update-person">
+      <h1>Update Person</h1>
       <main>
-        <form onSubmit={handleSubmit} className="create-person-form">
+        <form onSubmit={handleSubmit} className="update-person-form">
           <fieldset>
             <legend>Data</legend>
 
             <label htmlFor="name">Name</label>
-            <input className="input-block" id="name" defaultValue={name} />
+            <input
+              className="input-block"
+              id="name"
+              defaultValue={person.name}
+              onChange={(event) => setName(event.target.value)}
+            />
 
             <label htmlFor="cpf">CPF</label>
-            <input className="input-block" id="cpf" defaultValue={cpf} />
+            <input
+              className="input-block"
+              id="cpf"
+              defaultValue={person.cpf}
+              onChange={(event) => setCpf(event.target.value)}
+            />
 
             <label htmlFor="birthday">birthday</label>
             <input
               className="input-block"
               id="birthday"
-              defaultValue={birthday}
+              defaultValue={person.birthday}
+              onChange={(event) => setBirthday(event.target.value)}
             />
 
             <label htmlFor="email">E-mail</label>
-            <input className="input-block" id="email" defaultValue={email} />
+            <input
+              className="input-block"
+              id="email"
+              defaultValue={person.email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
 
             <label htmlFor="nationality">Nationality</label>
             <input
               className="input-block"
               id="nationality"
-              defaultValue={nationality}
+              defaultValue={person.nationality}
+              onChange={(event) => setNationality(event.target.value)}
             />
           </fieldset>
           <button className="confirm-button" type="submit">

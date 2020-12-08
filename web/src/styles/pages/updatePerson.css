@@ -1,0 +1,6 @@
+#page-update-person main form fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  padding: 30px;
+}
