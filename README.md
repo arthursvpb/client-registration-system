@@ -38,20 +38,6 @@ git clone https://github.com/arthursvpb/client-registration-system.git
 cd client-registration-system
 ```
 
-Install dependencies and start backend server. 
-```
-cd backend
-yarn install
-yarn start
-```
-
-Install dependencies and start frontend client. 
-```
-cd web
-yarn install
-yarn start
-```
-
 Run the SQL file from: `./src/backend/src/database/database.sql` to generate the database:
 
 ```sql
@@ -85,4 +71,18 @@ const knex = require("knex")({
 });
 
 module.exports = knex;
+```
+
+Install dependencies and start backend server. 
+```
+cd backend
+yarn install
+yarn start
+```
+
+Install dependencies and start frontend client. 
+```
+cd web
+yarn install
+yarn start
 ```
