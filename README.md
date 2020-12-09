@@ -47,7 +47,7 @@ yarn start
 
 Install dependencies and start frontend client. 
 ```
-cd frontend
+cd web
 yarn install
 yarn start
 ```
