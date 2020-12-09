@@ -1,8 +1,12 @@
+#title {
+  text-align: center;
+}
+
 .person-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: justify;
+  text-align: center;
   border: 1px dashed black;
   margin: 25px;
 }
@@ -11,14 +15,12 @@
   display: flex;
   justify-content: center;
   width: 1100px;
-  border: 1px dashed black;
-  margin: 0px 0px 0px 0px
+  margin: 0px 0px 0px 0px;
 }
 
 .person-list .person div {
-  border: 1px dashed black;
   margin: 0 10px;
-  padding: 0 25px;
+  padding: 25px;
 }
 
 .person-list .person .user {
@@ -26,6 +28,4 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  border: 1px dashed black;
 }

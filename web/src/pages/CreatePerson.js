@@ -63,6 +63,7 @@ function CreatePerson() {
               className="input-block"
               id="birthday"
               value={birthday}
+              placeholder="Ex: YYYY-MM-DD"
               onChange={(event) => setBirthday(event.target.value)}
             />
 

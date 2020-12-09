@@ -22,7 +22,7 @@ function Person() {
   }
 
   return (
-    <div>
+    <div id="title">
       <h1>Person list</h1>
       <a href="/person/new" id="enter-create-person">
         Create new person
@@ -32,17 +32,17 @@ function Person() {
           <div className="person-list">
             <div className="person">
               <div className="user">
-                <h2>{person.name}</h2>
+                <h4>{person.name}</h4>
                 <img src={user} alt="User" width={60}></img>
               </div>
               <div>
-                <p>ID: {person.id}</p>
-                <p>CPF: {person.cpf}</p>
-                <p>E-mail: {person.email}</p>
-                <p>Birthday: {person.birthday}</p>
-                <p>Nationality: {person.nationality}</p>
-                <p>Created at: {person.createdAt}</p>
-                <p>Updated at: {person.updatedAt}</p>
+                <p><b>ID:</b> {person.id}</p>
+                <p><b>CPF:</b> {person.cpf}</p>
+                <p><b>E-mail:</b> {person.email}</p>
+                <p><b>Birthday:</b> {person.birthday}</p>
+                <p><b>Nationality:</b> {person.nationality}</p>
+                <p><b>Created at:</b> {person.createdAt}</p>
+                <p><b>Updated at:</b> {person.updatedAt}</p>
                 <a href={`/person/${person.id}/edit`}>Update</a>
                 <button onClick={() => handleRemovePerson(person.id)}>
                   Delete
