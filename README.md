@@ -36,13 +36,17 @@ It is necessary having MySQL, Node, Git and Insomnia or Postman.
 ```shell
 git clone https://github.com/arthursvpb/client-registration-system.git
 cd client-registration-system
+```
 
+Install dependencies and start backend server. 
+```
 cd backend
 yarn install
 yarn start
+```
 
-cd ..
-
+Install dependencies and start frontend client. 
+```
 cd frontend
 yarn install
 yarn start
